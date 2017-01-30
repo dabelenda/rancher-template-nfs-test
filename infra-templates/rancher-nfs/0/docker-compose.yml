@@ -1,8 +1,8 @@
 version: '2'
 services:
   nfs-server:
-    privileged: true
     image: cpuguy83/nfs-server
+    privileged: true
     pid: host
     command: /data
     volumes:
@@ -10,6 +10,7 @@ services:
       - /etc/services:/etc/services
     labels:
       io.rancher.scheduler.affinity:host_label: storage=true
+
   nfs-driver:
     privileged: true
     image: rancher/storage-nfs:v0.6.0
@@ -24,6 +25,7 @@ services:
       NFS_SERVER: nfs-server
       MOUNT_DIR: /
       MOUNT_OPTS: nfsvers=4
+      RANCHER_DEBUG: '${RANCHER_DEBUG}'
     volumes:
     - /var/run:/var/run
     - /dev:/host/dev
