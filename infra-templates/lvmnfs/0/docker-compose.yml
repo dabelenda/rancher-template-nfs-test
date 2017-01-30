@@ -11,9 +11,9 @@ services:
     labels:
       io.rancher.scheduler.affinity:host_label: storage=true
 
-  lvm-nfs-driver:
+  lvmnfs-driver:
     privileged: true
-    image: dabelenda/storage-lvm-nfs:v0.6.6
+    image: dabelenda/storage-lvmnfs:v0.6.6
     pid: host
     links:
       - nfs-server

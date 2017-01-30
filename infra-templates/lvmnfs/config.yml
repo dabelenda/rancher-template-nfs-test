@@ -1,5 +1,5 @@
-name: LVM-NFS
+name: LVMNFS
 description: |
-  Test LVM-NFS
+  Test LVMNFS Driver
 version: 0.6.6
 category: Storage
