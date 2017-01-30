@@ -11,7 +11,7 @@ services:
     labels:
       io.rancher.scheduler.affinity:host_label: storage=true
 
-  nfs-driver:
+  lvm-nfs:
     privileged: true
     image: dabelenda/storage-lvm-nfs:v0.6.6
     pid: host
@@ -30,9 +30,4 @@ services:
     - /var/run:/var/run
     - /dev:/host/dev
     - /var/lib/rancher/volumes:/var/lib/rancher/volumes:shared
-    logging:
-      driver: json-file
-      options:
-        max-size: 25m
-        max-file: '2'
 
