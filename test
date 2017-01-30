@@ -1,31 +1,17 @@
 version: '2'
 services:
-  nfs-server:
-    image: cpuguy83/nfs-server
-    privileged: true
-    pid: host
-    command: /data
-    volumes:
-      - /data
-      - /etc/services:/etc/services
-    labels:
-      io.rancher.scheduler.affinity:host_label: storage=true
-
   nfs-driver:
     privileged: true
     image: rancher/storage-nfs:v0.6.0
     pid: host
-    links:
-      - nfs-server
     labels:
       io.rancher.scheduler.global: 'true'
       io.rancher.container.create_agent: 'true'
       io.rancher.container.agent.role: environment
     environment:
-      NFS_SERVER: 172.18.0.2
-      MOUNT_DIR: /
-      MOUNT_OPTS: nfsvers=4
-      RANCHER_DEBUG: '${RANCHER_DEBUG}'
+      NFS_SERVER: '${NFS_SERVER}'
+      MOUNT_DIR: '${MOUNT_DIR}'
+      MOUNT_OPTS: '${MOUNT_OPTS},${NFS_VERS}'
     volumes:
     - /var/run:/var/run
     - /dev:/host/dev
@@ -35,4 +21,5 @@ services:
       options:
         max-size: 25m
         max-file: '2'
+
 
