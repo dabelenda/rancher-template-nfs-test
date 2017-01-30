@@ -1,0 +1,5 @@
+name: NFS
+description: |
+  Test NFS
+version: 0.0
+category: Storage
