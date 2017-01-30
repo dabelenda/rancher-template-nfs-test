@@ -15,6 +15,6 @@
     - false
 nfs-driver:
   storage_driver:
-    name: rancher-nfs
+    name: rancher-lvm-nfs
     scope: environment
     volume_access_mode: multiHostRW

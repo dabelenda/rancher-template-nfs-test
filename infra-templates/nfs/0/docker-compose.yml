@@ -13,7 +13,7 @@ services:
 
   nfs-driver:
     privileged: true
-    image: rancher/storage-nfs:v0.6.0
+    image: dabelenda/storage-lvm-nfs:v0.6.6
     pid: host
     links:
       - nfs-server
