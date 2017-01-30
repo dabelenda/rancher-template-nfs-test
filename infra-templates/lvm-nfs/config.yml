@@ -1,0 +1,5 @@
+name: LVM-NFS
+description: |
+  Test LVM-NFS
+version: 0.6.6
+category: Storage
