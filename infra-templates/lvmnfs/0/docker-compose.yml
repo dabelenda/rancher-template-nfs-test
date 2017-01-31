@@ -1,7 +1,7 @@
 version: '2'
 services:
   nfs-server:
-    image: cpuguy83/nfs-server
+    image: dabelenda/nfs-server
     privileged: true
     pid: host
     command: /data
