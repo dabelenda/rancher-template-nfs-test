@@ -4,7 +4,6 @@ services:
     image: dabelenda/nfs-server
     privileged: true
     pid: host
-    command: /data
     volumes:
       - /data
       - /etc/services:/etc/services
