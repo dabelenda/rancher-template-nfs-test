@@ -14,4 +14,4 @@ volumes:
   mysqldata:
     driver: rancher-lvmnfs
     driver_opts:
-      json_options: '{ "size": "${QUOTA_SIZE_MIB}" }'
+      size: ${QUOTA_SIZE_MIB}
